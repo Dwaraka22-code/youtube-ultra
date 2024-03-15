@@ -31,6 +31,7 @@ const Header = () => {
     return () => {
       clearTimeout(timer);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery]);
 
   const getSuggestions = async () => {
@@ -38,7 +39,7 @@ const Header = () => {
       .then((data) => data.json())
       .then((response) => {
         setSuggestions(response[1]);
-        console.log(response);
+        // console.log(response);
         dispatch(
           cacheSuggestions({
             [searchQuery]: response[1],

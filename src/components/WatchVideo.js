@@ -30,6 +30,7 @@ const WatchVideo = () => {
   useEffect(() => {
     dispatch(closeMenu());
     getVideoDetails();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [videoId]);
 
   const getVideoDetails = async () => {
@@ -41,7 +42,7 @@ const WatchVideo = () => {
     const recVideoJson = await data[1].json();
     setVideo(watchVideoJson?.items[0]);
     setRelatedVideos(recVideoJson?.items);
-    console.log(relatedVideos);
+    // console.log(relatedVideos);
   };
 
   return (

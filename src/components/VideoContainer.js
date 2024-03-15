@@ -13,6 +13,7 @@ const VideoContainer = () => {
 
   useEffect(() => {
     getVideos();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -20,6 +21,7 @@ const VideoContainer = () => {
     return () => {
       window.removeEventListener('scroll', infiniteScroll, true);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nextPageToken]);
 
   const getVideos = async () => {
